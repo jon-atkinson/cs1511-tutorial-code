@@ -16,11 +16,13 @@ int main(void) {
   // If the first integer is less than the second, print out a short error message
   if (a < b) {
     printf("a needs to be greater than b\n");
+    return 1;
   }
 
   // If the second integer is 0, print out a different short error message.
   if (b == 0) {
     printf("the second number cannot be 0\n");
+    return 1;
   }
 
   // If the first integer is larger than the second, prints a / b and (a * 1.0) / (b * 1.0).
