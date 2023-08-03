@@ -7,8 +7,10 @@ int main(void) {
     // Declare and initialise array
     int temps[NUM_DAYS] = {0};
 
+    // Print a prompt for the user
+    printf("Please enter %d temperatures: ", NUM_DAYS);
+
     // Read in values
-    // NB: For loops are taught this term (22T3)
     for (int i = 0; i < NUM_DAYS; i++) {
         scanf("%d", &temps[i]);
     }
