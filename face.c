@@ -14,17 +14,17 @@ this is poor style
 int main (void) {
     printf("Hello World\nHello again\n");
 
-    printf("~ ~");
-    printf("0 0");
-    printf(" o");
-    printf(" -");
-    print("\n")
+    printf("~ ~\n");
+    printf("0 0\n");
+    printf(" o\n");
+    printf(" -\n");
+    printf("\n");
 
-    printf("~ ~");
-    printf("0 0");
-    printf(" o");
-    printf("\\_/");
-    print("\n")
+    printf("~ ~\n");
+    printf("0 0\n");
+    printf(" o\n");
+    printf("\\_/\n");
+    printf("\n");
     
     return 0;
 }
