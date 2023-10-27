@@ -1,4 +1,4 @@
-// Jon Atkinson
+// Jon Atkinson COMP1511 H09C 23T3
 // Small program to demonstrate different methods of scanning while in a loop
 // comment/uncomment different sections to have a play with them and see how they
 // work. Read the comment above fgets for important implementation info

@@ -1,4 +1,4 @@
-// Jon Atkinson
+// Jon Atkinson COMP1511 H09C 23T3
 // Small program to demonstrate how we might use pointers to solve problems with
 // changing many values in a function
 #include <stdio.h>

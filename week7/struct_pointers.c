@@ -1,4 +1,4 @@
-// Jon Atkinson
+// Jon Atkinson COMP1511 H09C 23T3
 // Small program to demonstrate the use of pointers when working with structs
 // and functions, especially to see the -> syntax at work
 #include <stdio.h>

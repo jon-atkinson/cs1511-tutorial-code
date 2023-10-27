@@ -1,4 +1,4 @@
-// Jon Atkinson
+// Jon Atkinson and COMP1511 H09C 23T3
 // Small program to demonstrate the use of command line arguments (CLA)
 // To use compile (dcc command_line_args.c -o command_line_args) and run, making
 // sure to add 
