@@ -14,7 +14,7 @@ int main(void) {
 
         result = scanf("%d", &input_var);
     }
-
+    
     // second and better option
     while (scanf("%d", &input_var)) {
         // successfully read an integer into inputVar
