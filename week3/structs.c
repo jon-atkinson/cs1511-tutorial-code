@@ -19,6 +19,8 @@ struct shoe {
     char letter;
 };
 
+struct person setup_person(int shoe_size, double height, char initial, enum opal_card_type card);
+
 int main(void) {
     struct person jon;
     jon.shoe_size = 11;
@@ -29,9 +31,9 @@ int main(void) {
     // this is the same as the above code:
     jon = setup_person(11, 183.0, 'j', STUDENT);
     // so it's shorter in the call, and the beauty of this method is that we can reuse it!!!
-    tim = setup_person(12, 180.5, 't', ADULT);
-    tammy = setup_person(8, 160.4, 't', CONCESSION);
-    jake = setup_person(10, 184.2, 'j', ADULT);
+    struct person tim = setup_person(12, 180.5, 't', ADULT);
+    struct person tammy = setup_person(8, 160.4, 't', CONCESSION);
+    struct person jake = setup_person(10, 184.2, 'j', ADULT);
 
     // if you're not sure why functionising the setup of a struct is a good idea,
     // try initialising the above 4 people by hand, it takes a while
@@ -47,3 +49,4 @@ struct person setup_person(int shoe_size, double height, char initial, enum opal
     person.card = card;
     return person;
 }
+
