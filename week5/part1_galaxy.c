@@ -1,7 +1,7 @@
 // part1_galaxy.c
 //
-// This program was written by YOUR-NAME (ZID)
-// on DATE
+// This program was written by COMP1511 T09B
+// on March 2024
 //
 // This program is a simple game that allows the user to build a galaxy. 
 // The user can place stars, planets, and nebulae in the galaxy.
@@ -29,60 +29,53 @@ void print_map(struct celestial_body galaxy[SIZE][SIZE]);
 int main(void) {
     struct celestial_body galaxy[SIZE][SIZE];
 
-    // TODO: Initialize the galaxy
+    // Initialise the galaxy
     for (int i = 0; i < SIZE; i++) {
         for (int j = 0; j < SIZE; j++) {
-            // struct celestial_body body;
             galaxy[i][j].entity = EMPTY;
-            galaxy[i][j].point = 0;
+            galaxy[i][j].points = 0;
         }
     }
 
-    // TODO: Place the player in the galaxy
-    printf("Enter the starting position of the player: ");
-    int valid_spawn = 0;
-    int player_row = -1;
-    int player_col = -1;
-    while (valid_spawn == 0) {
-        scanf("%d %d", &player_row, &player_col);
-        if (player_row >= 0 && player_row < SIZE && player_col >= 0 && player_col < SIZE) {
-            valid_spawn = 1;
-        } else {
-            printf("Invalid starting position\n");
-            printf("Re-enter starting position: ");
-        }
+    // Place the player in the galaxy
+    int row, col;
+    printf("Enter the starting position the player: ");
+    scanf("%d %d", &row, &col);
+    while (row != 0 && row != SIZE - 1 && col != 0 && col != SIZE - 1) {
+        printf("Invalid player position!\n");
+        printf("Please re-enter the starting position of the player: ");
+        scanf("%d %d", &row, &col);
     }
+    galaxy[row][col].entity = SPACESHIP;
+    galaxy[row][col].points = 0;
 
-    // TODO: Place the planets and nebulae in the galaxy
+    // Place the planets and nebulae in the galaxy
     printf("How many planets and nebulae are there? ");
-    int count_bodies = -1;
-    scanf("%d", &count_bodies);
-
-    // TODO: Place the planets and nebulae in the galaxy
+    int count;
+    int points;
+    scanf("%d", &count);
     printf("Enter the position and points of the planet(s) and nebula(e): ");
-    char body_type;
-    int row = -1;
-    int col = -1;
-    int points = -1;
-    for (int i = 0; i < count_bodies; i++) {
-        scanf(" %c", &body_type);
-        if (body_type == 'p') {
-            scanf("%d %d %d", &row, &col, &points);           
+    char type;
+    for (int i = 0; i < count; i++) {
+        scanf(" %c %d %d", &type, &row, &col);
+        if (type == 'p') {
+            scanf("%d", &points);
             galaxy[row][col].entity = PLANET;
             galaxy[row][col].points = points;
-        } else if (body_type == 'n'){
-            scanf("%d %d", &row, &col);           
+        } else if (type == 'n') {
             galaxy[row][col].entity = NEBULA;
-        } else {
-            printf("error");
-            return 1;
+            galaxy[row][col].points = NEBULA_POINTS;
         }
+        galaxy[row][col].points = 0;
     }
     
-    // TODO: Place the stars in the galaxy
+    // Place the stars in the galaxy
     printf("Enter the position and points of the star(s): \n");
+    while(scanf("%d %d %d", &row, &col, &points) == 3) {
+        galaxy[row][col].entity = STAR;
+		galaxy[row][col].points = points;
+    }
 
-    // TODO: Print the map
     print_map(galaxy);
 }
 
