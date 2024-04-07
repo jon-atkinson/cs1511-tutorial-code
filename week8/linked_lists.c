@@ -73,3 +73,40 @@ int list_length(struct node *head) {
 
     return length;
 }
+
+struct node *insert_middle(struct node *head, int data) {
+    struct node *new_node = create_node(data);
+    struct node *curr = head;
+    // round down to find the insertion point for uneven lists
+    int insert_at = list_length(head) / 2;
+    
+    if (head == NULL) {
+        return new_node;
+    }
+
+    // move curr to the insertion point
+    while (insert_at > 0) {
+        curr = curr->next;
+        insert_at--;
+    }
+
+    // insert new_node at correct point
+    new_node->next = curr->next;
+    curr->next = new_node;
+
+    return head;
+}
+
+// TODO: this comes up in the assignment so I won't give the answers away just yet
+// after everyone's submitted I'll add it if someone asks
+struct node *reverse_linked_list(struct node *head) {
+    exit(1);
+}
+
+// bonus bonus for those wanting a challenge, interleave_lists
+// arguments: 2 linked lists list_one, list_two
+// returns: a pointer to a list composed of the original nodes interleaved
+// e.g. 1 -> 2 -> 3 -> 4 and 5 -> 6 -> 7 -> 8 returns 1 -> 5 -> 2 -> 6 -> 3 -> 7 -> 4 -> 8 -> X
+struct node *interleave_lists(struct node *list_one, struct node *list_two) {
+    exit(1);
+}
