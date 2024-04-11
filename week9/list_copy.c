@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "linked_lists.h";
+
 struct node *list_copy(struct node *head) {
     if (head == NULL) {
         return head;

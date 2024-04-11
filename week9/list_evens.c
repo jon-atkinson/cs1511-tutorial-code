@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "linked_lists.h"
+
 int list_evens(struct node *head1, struct node *head2) {
     int found1 = 0, found2 = 0;
     while (head1 != NULL) {

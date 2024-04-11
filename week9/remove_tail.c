@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "linked_lists.h"
+
 struct node *remove_tail(struct node *head) {
     // If the linked list is empty, return NULL
     if (head == NULL) {

@@ -1,5 +1,5 @@
 // linked_lists.c
-// Written by Sofia De Bellis (z5418801) on March 2024
+// Written by T09B
 // Implementation file for simple linked lists functions
 
 #include <stdio.h>
@@ -94,13 +94,13 @@ struct node *remove_tail(struct node *head) {
     }
 
     // Store the last node in a temporary variable
-    struct node *temp = current->next;
+    struct node *delete_me= current->next;
 
     // Update the second last node to point to NULL
     current->next = NULL;
 
     // Free the memory allocated for the last node
-    free(temp);
+    free(delete_me);
 
     return head;
 }

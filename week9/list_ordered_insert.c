@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "linked_lists.h"
+
 struct node *list_ordered_insert(struct node *head, int value) {
     struct node *new_node = malloc(sizeof(struct node));
     new_node->data = value;

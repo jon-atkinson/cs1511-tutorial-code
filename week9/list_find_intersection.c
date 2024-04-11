@@ -1,3 +1,7 @@
+#include <stdio.h>
+
+#include "linked_lists.h"
+
 // Helper function to check if a value exists in a list.
 int exists_in_list(struct node *head, int data) {
     struct node *current = head;
@@ -13,16 +17,20 @@ struct node *list_find_intersection(struct node *head1, struct node *head2) {
     struct node *result = NULL;
     
     while (head1 != NULL) {
+        // node exists in list2 and hasn't already been added to our
+        // intersection list
         if (exists_in_list(head2, head1->data) && 
-            !exists_in_list(result, head1->data)) 
-        {
+                !exists_in_list(result, head1->data)) {
+            // create new node to add to intersection
             struct node *new_node = malloc(sizeof(struct node));
-            new_node->data = data;
+            new_node->data = head1->data;
             new_node->next = NULL;
             
             if (result == NULL) {
+                // no nodes added already, make it the result head node
                 result = new_node;
             } else {
+                // add node to the intersection
                 struct node *current = result;
                 while (current->next != NULL) {
                     current = current->next;

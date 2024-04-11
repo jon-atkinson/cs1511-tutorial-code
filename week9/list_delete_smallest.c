@@ -1,10 +1,14 @@
+#include <stdio.h>
+
+#include "linked_lists.h"
+
 struct node *list_delete_smallest(struct node *head) {
     if (head == NULL || head->next == NULL) {
         return NULL;
     }
      
     struct node *current = head;
-    struct node *smallest_prev = NULL,;
+    struct node *smallest_prev = NULL;
     struct node *prev = NULL;
 
     int smallest_data = head->data;
