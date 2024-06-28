@@ -127,6 +127,8 @@ void enter_planets_nebulae(struct celestial_body galaxy[SIZE][SIZE]) {
 // returns: nothing
 void place_player(struct celestial_body galaxy[SIZE][SIZE]) {
     printf("Enter the starting position of the player: ");
+    int row;
+    int col;
     scanf("%d %d", &row, &col);
     while (galaxy[row][col].entity != EMPTY) {
         printf("Invalid starting position!\n");
@@ -144,6 +146,9 @@ void place_player(struct celestial_body galaxy[SIZE][SIZE]) {
 // returns: nothing
 void place_stars(struct celestial_body galaxy[SIZE][SIZE]) {
     printf("Enter the position and points of the star(s):\n");
+    int row;
+    int col;
+    int points;
     while(scanf("%d %d %d", &row, &col, &points) == 3) {
         galaxy[row][col].entity = STAR;
         galaxy[row][col].points = points;
