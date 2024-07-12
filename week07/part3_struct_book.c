@@ -1,7 +1,7 @@
 // part3_struct_book.c
 // This program uses pointers to edit a struct book
-// Written by T15B
-// On 09/07/2024
+// Written by H15A
+// On 11/07/2024
 
 #include <stdio.h>
 #include <stdlib.h>
