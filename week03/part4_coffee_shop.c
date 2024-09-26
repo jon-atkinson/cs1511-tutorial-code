@@ -1,6 +1,6 @@
 // coffee_shop.c
 //
-// written by H15A
+// written by W15B
 // on 13/06/2024
 //
 // This program is a simple coffee shop used to demonstrate the use of 
@@ -14,16 +14,8 @@
 #define ADDED_COST 0.5
 #define BASE_COST 4.5
 
-// TODO: Define an enum `coffee_type` that stores the different types of coffees 
-// the shop sells. These are: LATTEE, CAPPUCCINO, ESPRESSO, AMERICANO & MATCHA.
-
-// TODO: Define a struct `coffee` that stores 
-// 1. the coffee type (an enum)
-// 2. the number of sugars 
-// 3. the size of a coffee 
-
 enum coffee_type {
-    LATTEE,
+    LATTE,
     CAPPUCCINO = 6,
     ESPRESSO,
     AMERICANO,
@@ -37,25 +29,48 @@ struct coffee {
 };
 
 int main(void) {
-    // TODO: Initalise a variable for the struct
-    struct coffee my_coffee;
-    my_coffee.sugars = 2;
-    my_coffee.size = LARGE;
-    my_coffee.type = ESPRESSO;
+    struct coffee order;
 
     printf("Enter coffee type (0: LATTE, 1: CAPPUCCINO, 2: ESPRESSO, \
             3: AMERICANO, 4: MATCHA): ");
+    int coffee_type_input = -1;
+    scanf("%d", &coffee_type_input);
+    if (coffee_type_input == 0) {
+        order.type = LATTE;
+    } else if (coffee_type_input == 1) {
+        order.type = CAPPUCCINO;
+    } else if (coffee_type_input == 2) {
+        order.type = ESPRESSO;
+    } else if (coffee_type_input == 3) {
+        order.type = AMERICANO;
+    } else if (coffee_type_input == 4) {
+        order.type = MATCHA;
+    } else {
+        printf("No matching coffee type found!\n");
+        return 1;
+    }
     
-    // TODO: take user input
-
     printf("Enter number of sugars: ");
-    // TODO: take user input
+    scanf("%d", &order.sugars);
 
     printf("Enter size (L for Large, R for Regular): ");
-    // TODO: take user input
+    scanf(" %c", &order.size);
 
-    // TODO: Calculate cost of order
+	double total_cost = BASE_COST;
+
+	if (order.size == LARGE) {
+		total_cost += ADDED_COST;
+	}
+
+	if (order.type == LATTE || 
+			order.type == CAPPUCCINO|| 
+			order.type == MATCHA) {
+			total_cost += ADDED_COST;
+	}
+	
+	total_cost += ADDED_COST * order.num_sugars;
 
 	printf("Total cost: %.2lf\n", total_cost);
+
 	return 0;
 }
