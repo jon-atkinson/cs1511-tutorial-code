@@ -1,6 +1,6 @@
 // printing.c
 //
-// This program was written by W09B,
+// This program was written by T09A,
 // on 09/24
 //
 // A simple program for testing some floating point and integer division

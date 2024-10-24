@@ -1,6 +1,6 @@
 // face.c
 //
-// Written by W09B,
+// Written by T09A,
 // on 11/09/24
 //
 // The program prints two simple faces
