@@ -1,5 +1,5 @@
 // part3_linked_lists.c
-// This program was written by Sofia De Bellis (z5418801) and YOUR-NAME (zID)
+// This program was written by COMP1511 24T3 T09A
 // Program tests linked lists functions
 
 #include <stdio.h>

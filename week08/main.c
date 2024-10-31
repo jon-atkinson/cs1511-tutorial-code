@@ -1,6 +1,6 @@
 // main.c
-// This program was written by YOUR-NAME (zID)
-// // Program to test linked lists functions
+// This program was written by COMP1511 24T3 T09A
+// Program to test linked lists functions
 
 #include <stdio.h>
 #include <stdlib.h>

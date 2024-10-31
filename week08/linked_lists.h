@@ -1,5 +1,5 @@
 // linked_lists.h
-// This program was written by Sofia De Bellis (z5418801), on March 2024
+// This program was written by COMP1511 24T3 T09A
 // Header file for simple linked lists functions
 
 struct node {
