@@ -1,7 +1,7 @@
 // part1_while_loops.c
 //
 // written by W15B
-// on 14/06/2024
+// on 13/06/2024
 //
 // This program is a simple demonstration of a count loop in c
 

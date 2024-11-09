@@ -1,6 +1,6 @@
 // part1_variables
 //
-// This program was written by W09B,
+// This program was written by T09A,
 // 09/24
 //
 // This program calculates the area of a circle
