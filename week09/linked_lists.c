@@ -1,16 +1,15 @@
 // main.c
-// Written by T09A, 05/11/24
+// Written by W09B, 06/11/24
 // Program to test simple linked lists functions
 
 #include <stdio.h>
 #include <stdlib.h>
 
-
 struct node {
-    // The data stored in the node
-    int data;
-    // Pointer to the next node in the linked list
-    struct node *next;
+  // The data stored in the node
+  int data;
+  // Pointer to the next node in the linked list
+  struct node *next;
 };
 
 // Creates a new node
@@ -71,135 +70,135 @@ struct node *remove_tail(struct node *head);
 
 int main(void) {
 
-    // Create a pointer to the head of the linked list
-    struct node *head = NULL;
+  // Create a pointer to the head of the linked list
+  struct node *head = NULL;
 
-    // Insert a node at the beginning of the linked list
-    head = insert_head(head, 10);
+  // Insert a node at the beginning of the linked list
+  head = insert_head(head, 10);
 
-    // Insert a node at the beginning of the linked list
-    head = insert_head(head, 5);
+  // Insert a node at the beginning of the linked list
+  head = insert_head(head, 5);
 
-    // Insert a node at the end of the linked list
-    head = insert_tail(head, 15);
+  // Insert a node at the end of the linked list
+  head = insert_tail(head, 15);
 
-    // Insert a node at the end of the linked list
-    head = insert_tail(head, 20);
+  // Insert a node at the end of the linked list
+  head = insert_tail(head, 20);
 
-    // Print the linked list
-    print_list(head);
+  // Print the linked list
+  print_list(head);
 
-    // Calculate and print the length of the linked list
-    int length = list_length(head);
-    printf("There are %d nodes in the list\n", length);
+  // Calculate and print the length of the linked list
+  int length = list_length(head);
+  printf("There are %d nodes in the list\n", length);
 
-    // Remove the last node from the linked list
-    head = remove_tail(head);
+  // Remove the last node from the linked list
+  head = remove_tail(head);
 
-    // Print the linked list
-    print_list(head);
+  // Print the linked list
+  print_list(head);
 
-    // Calculate and print the length of the linked list
-    length = list_length(head);
-    printf("There are %d nodes in the list\n", length);
+  // Calculate and print the length of the linked list
+  length = list_length(head);
+  printf("There are %d nodes in the list\n", length);
 
-    return 0;
+  return 0;
 }
 
 struct node *create_node(int data) {
-    struct node *new_node = malloc(sizeof(struct node));
-    new_node->data = data;
-    new_node->next = NULL;
+  struct node *new_node = malloc(sizeof(struct node));
+  new_node->data = data;
+  new_node->next = NULL;
 
-    return new_node;
+  return new_node;
 }
 
 struct node *insert_head(struct node *head, int data) {
-    // Create a new node
-    struct node *new_node = create_node(data);
-    new_node->next = head;
+  // Create a new node
+  struct node *new_node = create_node(data);
+  new_node->next = head;
 
-    return new_node;
+  return new_node;
 }
 
 struct node *insert_tail(struct node *head, int data) {
-    // Create a new node
-    struct node *new_node = create_node(data);
+  // Create a new node
+  struct node *new_node = create_node(data);
 
-    // If the linked list is empty, return the new node
-    if (head == NULL) {
-        return new_node;
-    }
+  // If the linked list is empty, return the new node
+  if (head == NULL) {
+    return new_node;
+  }
 
-    // Traverse the linked list to find the last node
-    struct node *current = head;
-    while (current->next != NULL) {
-        current = current->next;
-    }
+  // Traverse the linked list to find the last node
+  struct node *current = head;
+  while (current->next != NULL) {
+    current = current->next;
+  }
 
-    // Insert the new node at the end of the linked list
-    current->next = new_node;
+  // Insert the new node at the end of the linked list
+  current->next = new_node;
 
-    return head;
+  return head;
 }
 
 void print_list(struct node *head) {
-    // Set current to be the first node in the list
-    struct node *current = head;
-    
-    // Traverse the linked list and print each node 
-    // until we reach the end of the list
-    while (current != NULL) {
-        printf("%d -> ", current->data);
-        current = current->next;
-    }
-    printf("X\n");
+  // Set current to be the first node in the list
+  struct node *current = head;
+
+  // Traverse the linked list and print each node
+  // until we reach the end of the list
+  while (current != NULL) {
+    printf("%d -> ", current->data);
+    current = current->next;
+  }
+  printf("X\n");
 }
 
 int list_length(struct node *head) {
-    // Initialize the length of the list to 0
-    int length = 0;
+  // Initialize the length of the list to 0
+  int length = 0;
 
-    // Set current to be the first node in the list
-    struct node *current = head;
+  // Set current to be the first node in the list
+  struct node *current = head;
 
-    // Traverse the linked list and increment the length
-    // until we reach the end of the list
-    while (current != NULL) {
-        length++;
-        current = current->next;
-    }
+  // Traverse the linked list and increment the length
+  // until we reach the end of the list
+  while (current != NULL) {
+    length++;
+    current = current->next;
+  }
 
-    return length;
+  return length;
 }
 
 struct node *remove_tail(struct node *head) {
-    // If the linked list is empty, return NULL
-    if (head == NULL) {
-        return NULL;
-    }
+  // If the linked list is empty, return NULL
+  if (head == NULL) {
+    return NULL;
+  }
 
-    // If the linked list has only one node, free the memory
-    // allocated for the node and return NULL
-    if (head->next == NULL) {
-        free(head);
-        return NULL;
-    }
+  // If the linked list has only one node, free the memory
+  // allocated for the node and return NULL
+  if (head->next == NULL) {
+    free(head);
+    return NULL;
+  }
 
-    // Traverse the linked list to find the second last node
-    struct node *current = head;
-    while (current->next->next != NULL) {
-        current = current->next;
-    }
+  // Traverse the linked list to find the second last node
+  struct node *current = head;
+  while (current->next->next != NULL) {
+    current = current->next;
+  }
 
-    // Store the last node in a temporary variable
-    struct node *delete_me= current->next;
+  // Store the last node in a temporary variable
+  struct node *delete_me = current->next;
 
-    // Update the second last node to point to NULL
-    current->next = NULL;
+  // Update the second last node to point to NULL
+  current->next = NULL;
 
-    // Free the memory allocated for the last node
-    free(delete_me);
+  // Free the memory allocated for the last node
+  free(delete_me);
 
-    return head;
+  return head;
 }
