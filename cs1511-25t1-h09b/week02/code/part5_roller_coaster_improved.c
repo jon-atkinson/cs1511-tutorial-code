@@ -1,6 +1,6 @@
 // part5_roller_coaster
 //
-// This program was written by T09B
+// This program was written by H09B
 //
 // This program:
 // 1. Scans in the users height.
