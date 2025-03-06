@@ -1,6 +1,6 @@
 // part2_2d_while_loops.c
 //
-// This program was written by T09B
+// This program was written by H09B
 //
 // This program is a simple demonstration of a 2D while loop
 
@@ -10,18 +10,17 @@
 #define MAX_COL 5
 
 int main(void) {
-  int row = 0;
-  while (row < MAX_ROW) {
-    int col = 0;
-    while (col < MAX_COL) {
-      printf("# ");
-      col++;
+    int row = 0;
+    while (row < MAX_ROW) {
+        int col = 0;
+        while (col < MAX_COL) {
+            printf("# ");
+            col++;
+        }
+
+        printf("\n");
+        row++;
     }
 
-    printf("\n");
-
-    row++;
-  }
-
-  return 0;
+    return 0;
 }

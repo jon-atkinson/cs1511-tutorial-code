@@ -10,18 +10,17 @@
 #define MAX_COL 5
 
 int main(void) {
-  int row = 0;
-  while (row < MAX_ROW) {
-    int col = 0;
-    while (col < MAX_COL) {
-      printf("# ");
-      col++;
+    int row = 0;
+    while (row < MAX_ROW) {
+        int col = 0;
+        while (col < MAX_COL) {
+            printf("# ");
+            col++;
+        }
+
+        printf("\n");
+        row++;
     }
 
-    printf("\n");
-
-    row++;
-  }
-
-  return 0;
+    return 0;
 }
