@@ -14,24 +14,21 @@ struct student {
 void print_student(struct student student);
 
 int main(void) {
-  // struct student students[MAX];
+  struct student students[MAX];
 
-  // int i = 0;
-  // while (i < MAX) {
-  //   students[i].wam = 3.7;
-  //   students[i].initial = 'j';
-  //   students[i].age = 23;
-  //   students[i].year = FIFTH;
-  //   i++;
-  // }
-
-  //
-
-  // print_student(students[0]);
   int i = 0;
   while (i < MAX) {
-    char character = 'a' + i % 26;
-    printf("char is %c\n", character);
+    students[i].wam = 100.0 / i;
+    students[i].initial = 'a' + i % 26;
+    students[i].age = i;
+    students[i].year = FIFTH;
+
+    i++;
+  }
+
+  i = 0;
+  while (i < MAX) {
+    print_student(students[i]);
     i++;
   }
 
@@ -39,5 +36,22 @@ int main(void) {
 }
 
 void print_student(struct student student) {
-  printf("this is a string printf");
+  printf("student has wam %lf, initial '%c', age %d and is in ", student.wam,
+         student.initial, student.age);
+
+  if (student.year == FIRST) {
+    printf("first ");
+  } else if (student.year == SECOND) {
+    printf("second ");
+  } else if (student.year == THIRD) {
+    printf("third ");
+  } else if (student.year == FOURTH) {
+    printf("fourth ");
+  } else {
+    printf("fifth ");
+  }
+
+  printf("year!\n");
+
+  return;
 }
