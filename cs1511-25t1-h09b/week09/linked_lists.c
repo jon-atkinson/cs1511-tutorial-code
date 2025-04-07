@@ -1,5 +1,5 @@
 // main.c
-// Written by T09B
+// This program was written by COMP1511 H09B
 // Program to test simple linked lists functions
 
 #include <stdio.h>
