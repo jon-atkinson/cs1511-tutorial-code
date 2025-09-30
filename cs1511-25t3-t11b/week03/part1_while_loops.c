@@ -1,6 +1,6 @@
 // part1_while_loops.c
 //
-// Written by H17A,
+// Written by T11B
 //
 // This program is a simple demonstration of a count loop in c
 

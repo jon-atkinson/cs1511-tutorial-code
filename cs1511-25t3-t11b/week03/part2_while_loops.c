@@ -1,6 +1,6 @@
 // part2_2d_while_loops.c
 //
-// Written by H17A,
+// Written by T11B
 //
 // This program is a simple demonstration of a 2D while loop
 

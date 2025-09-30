@@ -1,6 +1,6 @@
 // coffee_shop.c
 //
-// Written by H17A,
+// Written by T11B
 //
 // This program is a simple coffee shop used to demonstrate the use of
 // structs and enums in C. This program takes user input for a coffee order
